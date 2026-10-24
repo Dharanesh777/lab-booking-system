@@ -1,0 +1,119 @@
+template_id,assigned_lab_id,batch,subject,faculty,lab_type,student_count,day_of_week,start_period,end_period,start_time,end_time,semester_label,semester_start,semester_end,is_locked,status,confidence,source_note
+1,1,V Sem BE CSE (AI&ML),Application Development Lab,,Programming,35,Mon,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+2,1,III Sem BE CSE (AI&ML),OOPS Lab,,Programming,35,Tue,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+3,1,III Sem BE CSE (AI&ML),DS Lab,,Programming,35,Wed,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+4,1,V Sem BE CSE (AI&ML),Big Data Analytics Lab,,Programming,35,Thu,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+5,1,Staff,Staff reservation,Dr. K.G.S,Programming,,Tue,1,2,08:30,10:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten; periods approximate
+6,1,Staff,AI Lab (staff reservation),Dr. Indumathi,Programming,,Wed,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten; periods approximate
+7,1,Staff,Staff reservation,Dr. K.G.S,Programming,,Fri,3,4,10:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten; periods approximate
+8,2,I Sem BE CSE G2,Python Lab,,Programming,32,Mon,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,medium,
+9,2,III Sem BE CSE G1,OOPS Lab,,Programming,32,Mon,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+10,2,I Sem BE CSE G2,Python Lab,,Programming,32,Tue,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,medium,
+11,2,III Sem BE CSE G2,OOPS Lab,,Programming,32,Fri,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,low,handwritten; typed Thu entry looks overwritten
+12,3,I Sem BE CSE (AI&ML),Python Programming Lab,,Programming,35,Mon,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+13,3,I Sem BE CSE (AI&ML),Python Programming Lab,,Programming,35,Thu,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+14,3,Staff,TAS Lab (staff reservation),Priya M.S.,Programming,,Fri,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten
+15,4,VII Sem BE CSE G2,CNS Lab,,AI/ML,32,Mon,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+16,4,VII Sem BE CSE G1,CNS Lab,,AI/ML,32,Wed,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+17,4,VII Sem BE CSE G1,PDL Lab,,AI/ML,32,Mon,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+18,4,III Sem BE CSE G1,DS Lab,,AI/ML,32,Tue,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+19,4,VII Sem BE CSE G2,PDL Lab,,AI/ML,32,Wed,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+20,4,III Sem BE CSE G2,DS Lab,,AI/ML,32,Thu,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+21,4,Staff,Staff reservation,Anil Jothi,AI/ML,,Thu,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten; periods approximate
+22,4,Staff,Staff reservation,Anil Jothi,AI/ML,,Fri,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten; periods approximate
+23,5,V Sem BE CSE G2,Computer Networks Lab,,Systems & Networking,32,Mon,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+24,5,V Sem BE CSE (AI&ML),Computer Networks Lab,,Systems & Networking,35,Tue,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+25,5,V Sem BE CSE G1,Computer Networks Lab,,Systems & Networking,32,Wed,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+26,5,V Sem BE CSE (CSI),System Software Lab,,Systems & Networking,30,Tue,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,medium,
+27,5,V Sem BE CSE (CSI),System Software Lab,,Systems & Networking,30,Thu,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,medium,
+28,5,V Sem BE CSE G2,System Software Lab,,Systems & Networking,32,Thu,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+29,5,V Sem BE CSE G1,System Software Lab,,Systems & Networking,32,Fri,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+30,5,Staff,Python (staff reservation),JPK,Systems & Networking,,Fri,1,2,08:30,10:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten
+31,5,Staff,Staff reservation,K.G.S,Systems & Networking,,Fri,3,4,10:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten
+32,5,Staff,Staff reservation,K.G.S,Systems & Networking,,Wed,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten
+33,6,I Sem BE CSE (AI&ML),EP Lab,,Hardware/Embedded,35,Mon,1,4,08:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+34,6,I Sem BE CSE (AI&ML),EP Lab,,Hardware/Embedded,35,Thu,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+35,6,Staff,Embedded Lab (staff reservation),Dr. Shriranjani,Hardware/Embedded,,Tue,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten; day inferred
+36,7,III Sem Metallurgy,C Programming Lab,,Programming,40,Tue,5,7,13:40,16:20,Odd 2025-26,2025-07-21,2025-11-29,1,completed,medium,
+37,7,II B.Sc (Applied Science),C Programming Lab,,Programming,35,Wed,2,4,09:20,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,medium,
+38,7,III Sem Metallurgy,C Programming Lab,,Programming,40,Thu,3,4,10:30,12:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,medium,
+39,7,II B.Sc (Applied Science),C Programming Lab,,Programming,35,Fri,5,7,13:40,16:20,Odd 2025-26,2025-07-21,2025-11-29,1,completed,medium,printed 'IIIB.Sc' or 'IIB.Sc' - verify
+40,8,VII Sem BE CSE (AI&ML),Project Work 1,,AI/ML,35,Mon,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+41,8,VII Sem BE CSE G2,Project Work 1,,AI/ML,32,Tue,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+42,8,VII Sem BE CSE G1,Project Work 1,,AI/ML,32,Wed,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,
+43,8,V Sem BE CSE (AI&ML),ML-2 Lab,,AI/ML,35,Thu,5,8,13:40,17:10,Odd 2025-26,2025-07-21,2025-11-29,1,completed,high,handwritten '69' = class strength; assumed 2 groups
+44,8,Staff,Staff reservation,Dr. K.G.S,AI/ML,,Tue,1,2,08:30,10:10,Odd 2025-26,2025-07-21,2025-11-29,0,completed,low,handwritten; periods approximate
+45,1,VI Sem BE CSE (AI&ML),Machine Learning Lab,,Programming,35,Tue,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+46,1,IV Sem BE CSE (AI&ML),DBMS Lab,,Programming,35,Wed,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+47,1,VI Sem BE CSE (AI&ML),Machine Learning Lab,,Programming,35,Thu,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+48,2,II Sem BE CSE G2,C Programming Lab,,Programming,32,Mon,1,4,08:30,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,medium,
+49,2,IV Sem BE CSE G1,DBMS Lab,,Programming,32,Mon,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+50,2,II Sem BE CSE G2,C Programming Lab,,Programming,32,Tue,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,medium,
+51,2,IV Sem BE CSE G2,DBMS Lab,,Programming,32,Fri,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,low,handwritten; typed Thu entry looks overwritten
+52,3,II Sem BE CSE (AI&ML),C Programming Lab,,Programming,35,Tue,1,4,08:30,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+53,3,II Sem BE CSE (AI&ML),C Programming Lab,,Programming,35,Thu,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+54,4,VIII Sem BE CSE G2,Project Work 2,,AI/ML,32,Tue,1,4,08:30,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+55,4,VIII Sem BE CSE G1,Project Work 2,,AI/ML,32,Wed,1,4,08:30,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+56,4,VIII Sem BE CSE G1,Project Work 2,,AI/ML,32,Mon,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+57,4,IV Sem BE CSE G1,DBMS Lab,,AI/ML,32,Wed,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+58,4,IV Sem BE CSE G2,DBMS Lab,,AI/ML,32,Thu,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+59,5,VI Sem BE CSE G2,Machine Learning Lab,,Systems & Networking,32,Mon,1,4,08:30,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+60,5,VI Sem BE CSE (AI&ML),Machine Learning Lab,,Systems & Networking,35,Tue,1,4,08:30,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+61,5,VI Sem BE CSE G1,Machine Learning Lab,,Systems & Networking,32,Wed,1,4,08:30,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+62,5,VI Sem BE CSE (CSI),Machine Learning Lab,,Systems & Networking,30,Tue,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,medium,
+63,5,VI Sem BE CSE (CSI),Machine Learning Lab,,Systems & Networking,30,Thu,1,4,08:30,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,medium,
+64,5,VI Sem BE CSE G2,Machine Learning Lab,,Systems & Networking,32,Wed,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+65,5,VI Sem BE CSE G1,Machine Learning Lab,,Systems & Networking,32,Fri,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+66,6,II Sem BE CSE (AI&ML),C Programming Lab,,Hardware/Embedded,35,Mon,1,4,08:30,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+67,6,II Sem BE CSE (AI&ML),C Programming Lab,,Hardware/Embedded,35,Fri,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+68,7,IV Sem Metallurgy,DBMS Lab,,Programming,40,Tue,5,7,13:40,16:20,Even 2025-26,2026-01-05,2026-04-30,1,completed,medium,
+69,7,II B.Sc (Applied Science),C Programming Lab,,Programming,35,Thu,2,4,09:20,12:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,medium,
+70,7,II B.Sc (Applied Science),C Programming Lab,,Programming,35,Fri,5,7,13:40,16:20,Even 2025-26,2026-01-05,2026-04-30,1,completed,medium,printed 'IIIB.Sc' or 'IIB.Sc' - verify
+71,8,VIII Sem BE CSE (AI&ML),Project Work 2,,AI/ML,35,Mon,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+72,8,VIII Sem BE CSE G2,Project Work 2,,AI/ML,32,Tue,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+73,8,VIII Sem BE CSE G1,Project Work 2,,AI/ML,32,Wed,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,
+74,8,VI Sem BE CSE (AI&ML),Machine Learning Lab,,AI/ML,35,Thu,5,8,13:40,17:10,Even 2025-26,2026-01-05,2026-04-30,1,completed,high,handwritten '69' = class strength; assumed 2 groups
+75,1,V Sem BE CSE (AI&ML),Application Development Lab,,Programming,35,Mon,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+76,1,III Sem BE CSE (AI&ML),OOPS Lab,,Programming,35,Tue,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+77,1,III Sem BE CSE (AI&ML),DS Lab,,Programming,35,Wed,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+78,1,V Sem BE CSE (AI&ML),Big Data Analytics Lab,,Programming,35,Thu,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+79,1,Staff,Staff reservation,Dr. K.G.S,Programming,,Tue,1,2,08:30,10:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten; periods approximate
+80,1,Staff,AI Lab (staff reservation),Dr. Indumathi,Programming,,Wed,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten; periods approximate
+81,1,Staff,Staff reservation,Dr. K.G.S,Programming,,Fri,3,4,10:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten; periods approximate
+82,2,I Sem BE CSE G2,Python Lab,,Programming,32,Mon,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,medium,
+83,2,III Sem BE CSE G1,OOPS Lab,,Programming,32,Mon,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+84,2,I Sem BE CSE G2,Python Lab,,Programming,32,Tue,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,medium,
+85,2,III Sem BE CSE G2,OOPS Lab,,Programming,32,Fri,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,low,handwritten; typed Thu entry looks overwritten
+86,3,I Sem BE CSE (AI&ML),Python Programming Lab,,Programming,35,Mon,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+87,3,I Sem BE CSE (AI&ML),Python Programming Lab,,Programming,35,Thu,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+88,3,Staff,TAS Lab (staff reservation),Priya M.S.,Programming,,Fri,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten
+89,4,VII Sem BE CSE G2,CNS Lab,,AI/ML,32,Mon,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+90,4,VII Sem BE CSE G1,CNS Lab,,AI/ML,32,Wed,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+91,4,VII Sem BE CSE G1,PDL Lab,,AI/ML,32,Mon,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+92,4,III Sem BE CSE G1,DS Lab,,AI/ML,32,Tue,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+93,4,VII Sem BE CSE G2,PDL Lab,,AI/ML,32,Wed,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+94,4,III Sem BE CSE G2,DS Lab,,AI/ML,32,Thu,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+95,4,Staff,Staff reservation,Anil Jothi,AI/ML,,Thu,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten; periods approximate
+96,4,Staff,Staff reservation,Anil Jothi,AI/ML,,Fri,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten; periods approximate
+97,5,V Sem BE CSE G2,Computer Networks Lab,,Systems & Networking,32,Mon,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+98,5,V Sem BE CSE (AI&ML),Computer Networks Lab,,Systems & Networking,35,Tue,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+99,5,V Sem BE CSE G1,Computer Networks Lab,,Systems & Networking,32,Wed,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+100,5,V Sem BE CSE (CSI),System Software Lab,,Systems & Networking,30,Tue,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,medium,
+101,5,V Sem BE CSE (CSI),System Software Lab,,Systems & Networking,30,Thu,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,medium,
+102,5,V Sem BE CSE G2,System Software Lab,,Systems & Networking,32,Thu,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+103,5,V Sem BE CSE G1,System Software Lab,,Systems & Networking,32,Fri,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+104,5,Staff,Python (staff reservation),JPK,Systems & Networking,,Fri,1,2,08:30,10:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten
+105,5,Staff,Staff reservation,K.G.S,Systems & Networking,,Fri,3,4,10:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten
+106,5,Staff,Staff reservation,K.G.S,Systems & Networking,,Wed,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten
+107,6,I Sem BE CSE (AI&ML),EP Lab,,Hardware/Embedded,35,Mon,1,4,08:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+108,6,I Sem BE CSE (AI&ML),EP Lab,,Hardware/Embedded,35,Thu,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+109,6,Staff,Embedded Lab (staff reservation),Dr. Shriranjani,Hardware/Embedded,,Tue,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten; day inferred
+110,7,III Sem Metallurgy,C Programming Lab,,Programming,40,Tue,5,7,13:40,16:20,Odd 2026-27,2026-07-20,2026-11-28,1,active,medium,
+111,7,II B.Sc (Applied Science),C Programming Lab,,Programming,35,Wed,2,4,09:20,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,medium,
+112,7,III Sem Metallurgy,C Programming Lab,,Programming,40,Thu,3,4,10:30,12:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,medium,
+113,7,II B.Sc (Applied Science),C Programming Lab,,Programming,35,Fri,5,7,13:40,16:20,Odd 2026-27,2026-07-20,2026-11-28,1,active,medium,printed 'IIIB.Sc' or 'IIB.Sc' - verify
+114,8,VII Sem BE CSE (AI&ML),Project Work 1,,AI/ML,35,Mon,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+115,8,VII Sem BE CSE G2,Project Work 1,,AI/ML,32,Tue,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+116,8,VII Sem BE CSE G1,Project Work 1,,AI/ML,32,Wed,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,
+117,8,V Sem BE CSE (AI&ML),ML-2 Lab,,AI/ML,35,Thu,5,8,13:40,17:10,Odd 2026-27,2026-07-20,2026-11-28,1,active,high,handwritten '69' = class strength; assumed 2 groups
+118,8,Staff,Staff reservation,Dr. K.G.S,AI/ML,,Tue,1,2,08:30,10:10,Odd 2026-27,2026-07-20,2026-11-28,0,active,low,handwritten; periods approximate

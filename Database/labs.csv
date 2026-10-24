@@ -1,0 +1,9 @@
+lab_id,name,lab_type,capacity,status,location,software_tags
+1,Programming Lab 1,Programming,50,available,CSE Block,"Python, C, C++, Java, VS Code, MySQL"
+2,3AI Lab,Programming,45,available,AI Wing,"Python, Java, C++, Jupyter"
+3,Programming Lab II,Programming,50,available,CSE Block,"Python, C, C++, Java, VS Code"
+4,AIR Lab,AI/ML,40,available,AI Wing,"Python, TensorFlow, PyTorch, Wireshark, GCC"
+5,SCPS Lab,Systems & Networking,48,available,CSE Block,"Linux, GCC, Wireshark, Packet Tracer, NS-2"
+6,TEQIP II Sponsored Hardware Lab,Hardware/Embedded,40,available,CSE Block,"Arduino IDE, Keil, Proteus, Embedded C"
+7,CC Lab 1 (PSG Computer Centre),Programming,50,available,Computer Centre,"C, C++, Code::Blocks"
+8,GRD Computing Lab,AI/ML,50,available,AI Wing,"Python, TensorFlow, PyTorch, Spark, Hadoop, Jupyter"
