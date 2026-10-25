@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, timezone
 
+from annotated_types import doc
 from bson import ObjectId
 from bson.errors import InvalidId
 from pymongo.errors import BulkWriteError
@@ -11,6 +12,11 @@ from app.schemas.booking import AdminBlockIn, StudentBookingIn
 from app.services.lab_service import get_lab
 from app.utils.dates import date_range, parse_date, today_ist
 
+from app.services.notification_service import (
+    notify_admins_new_booking,
+    notify_student_booking_update,
+    notify_affected_students
+)
 
 # ---------------- helpers ----------------
 def _now():
@@ -105,6 +111,9 @@ def create_student_booking(data: StudentBookingIn) -> dict:
         "created_at": _now(), "updated_at": _now(),
     }
     doc["_id"] = bookings.insert_one(doc).inserted_id
+
+    # Notify admins about the new request
+    notify_admins_new_booking(doc)
     return doc
 
 
@@ -146,6 +155,10 @@ def approve_booking(booking_id: str, admin_id: str) -> dict:
         raise ValidationFailed("Date already passed")
     _occupy(b["_id"], b["lab_id"], _dates_of(b), b["hours"])  # may raise ConflictError
     _set_status(b["_id"], "approved", admin_id)
+
+    updated = _get(booking_id)
+    notify_student_booking_update(updated, "approved")
+
     return _get(booking_id)
 
 
@@ -154,6 +167,13 @@ def reject_booking(booking_id: str, admin_id: str, reason: str = "") -> dict:
     if b["status"] != "pending":
         raise ValidationFailed(f"Booking is already {b['status']}")
     _set_status(b["_id"], "rejected", admin_id, reason)
+
+    updated = _get(booking_id)
+    notify_student_booking_update(updated, "rejected")
+    
+    updated = _get(booking_id)
+    notify_student_booking_update(updated, "rejected")
+    
     return _get(booking_id)
 
 
@@ -163,6 +183,9 @@ def cancel_by_admin(booking_id: str, admin_id: str, reason: str) -> dict:
         raise ValidationFailed(f"Cannot cancel a {b['status']} booking")
     _release(b["_id"])
     _set_status(b["_id"], "cancelled", admin_id, reason)
+    updated = _get(booking_id)
+    notify_student_booking_update(updated, "cancelled")
+
     return _get(booking_id)
 
 
@@ -218,6 +241,7 @@ def create_admin_block(data: AdminBlockIn) -> dict:
     except ConflictError:
         bookings.delete_one({"_id": doc["_id"]})
         raise
+    notify_affected_students(affected)
 
     return {"block": doc, "affected": affected}
 
