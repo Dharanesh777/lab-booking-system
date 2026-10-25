@@ -23,3 +23,11 @@ PERIODS = {
 
 # Weekdays skipped in semester blocks (Mon=0 ... Sun=6)
 SKIP_WEEKDAYS = (6,)
+
+# ---- auth ----
+SECRET_KEY = os.getenv("SECRET_KEY")
+if not SECRET_KEY:
+    raise RuntimeError("SECRET_KEY is not set. Add it to your .env file.")
+
+JWT_ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 480   # 8 hours

@@ -51,3 +51,15 @@ class SlotDoc(TypedDict):
     date: str                      # "YYYY-MM-DD"
     hour: int
     booking_id: ObjectId           # -> bookings._id
+
+class UserDoc(TypedDict, total=False):
+    """Collection: users (students and admins)"""
+    _id: ObjectId
+    role: Literal["student", "admin"]
+    name: str
+    email: str
+    roll_no: str          # students only
+    phone: str            # students only
+    password_hash: str
+    active: bool
+    created_at: datetime

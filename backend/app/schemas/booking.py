@@ -16,14 +16,14 @@ def _check_hours(v: List[int]) -> List[int]:
     return sorted(v)
 
 
-class StudentBookingIn(BaseModel):
+# ---------------- student booking ----------------
+class BookingRequest(BaseModel):
+    """What the student's form sends. roll_no and email come from the login."""
     lab_id: str
     date: Date
     hours: List[int]
     name: str
-    roll_no: str
     phone: str
-    email: EmailStr
     reason: str
     faculty: str
 
@@ -39,14 +39,7 @@ class StudentBookingIn(BaseModel):
             raise ValueError("Phone must be a 10-digit Indian mobile number")
         return v
 
-    @field_validator("email")
-    @classmethod
-    def v_email(cls, v):
-        if not v.lower().endswith("@" + EMAIL_DOMAIN):
-            raise ValueError(f"Use your @{EMAIL_DOMAIN} college mail")
-        return v.lower()
-
-    @field_validator("lab_id", "name", "roll_no", "reason", "faculty")
+    @field_validator("lab_id", "name", "reason", "faculty")
     @classmethod
     def v_nonempty(cls, v):
         v = v.strip()
@@ -55,13 +48,35 @@ class StudentBookingIn(BaseModel):
         return v
 
 
-class AdminBlockIn(BaseModel):
+class StudentBookingIn(BookingRequest):
+    """Full booking data used by the service layer."""
+    roll_no: str
+    email: EmailStr
+
+    @field_validator("email")
+    @classmethod
+    def v_email(cls, v):
+        if not v.lower().endswith("@" + EMAIL_DOMAIN):
+            raise ValueError(f"Use your @{EMAIL_DOMAIN} college mail")
+        return v.lower()
+
+    @field_validator("roll_no")
+    @classmethod
+    def v_roll(cls, v):
+        v = v.strip()
+        if not v:
+            raise ValueError("Field cannot be empty")
+        return v
+
+
+# ---------------- admin block / semester reservation ----------------
+class BlockRequest(BaseModel):
+    """What the admin's form sends. admin_id comes from the login."""
     lab_id: str
     start_date: Date
     end_date: Date
     hours: List[int]
     reason: str
-    admin_id: str
     override: bool = False  # True = cancel conflicting bookings (sudden placement)
 
     @field_validator("hours")
@@ -69,12 +84,12 @@ class AdminBlockIn(BaseModel):
     def v_hours(cls, v):
         return _check_hours(v)
 
-    @field_validator("reason")
+    @field_validator("lab_id", "reason")
     @classmethod
-    def v_reason(cls, v):
+    def v_nonempty(cls, v):
         v = v.strip()
         if not v:
-            raise ValueError("Reason is required")
+            raise ValueError("Field cannot be empty")
         return v
 
     @model_validator(mode="after")
@@ -82,3 +97,7 @@ class AdminBlockIn(BaseModel):
         if self.end_date < self.start_date:
             raise ValueError("end_date cannot be before start_date")
         return self
+
+
+class AdminBlockIn(BlockRequest):
+    admin_id: str

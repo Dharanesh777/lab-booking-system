@@ -1,10 +1,11 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 
+from app.core.deps import require_admin
 from app.schemas.lab import LabIn, LabUpdate
 from app.services import lab_service as ls
 from app.utils.serialize import clean
 
-router = APIRouter(prefix="/admin/labs", tags=["admin"])
+router = APIRouter(prefix="/admin/labs", tags=["admin"], dependencies=[Depends(require_admin)])
 
 
 @router.get("")

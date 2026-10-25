@@ -1,12 +1,13 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 
+from app.core.deps import get_current_user
 from app.core.exceptions import ValidationFailed
 from app.services import booking_service as bs
 from app.services import lab_service as ls
 from app.utils.dates import parse_date
 from app.utils.serialize import clean
 
-router = APIRouter(prefix="/labs", tags=["labs"])
+router = APIRouter(prefix="/labs", tags=["labs"], dependencies=[Depends(get_current_user)])
 
 
 @router.get("")

@@ -229,3 +229,34 @@ def get_availability(lab_id: str, date_str: str) -> list:
     taken = {s["hour"] for s in slots.find({"lab_id": lab_id, "date": date_str})}
     return [{"hour": h, "time": label, "available": h not in taken}
             for h, label in PERIODS.items()]
+
+# ---------------- admin listings ----------------
+_VALID_STATUSES = {"pending", "approved", "rejected", "cancelled"}
+_VALID_TYPES = {"student", "admin_block"}
+
+
+def list_bookings(status=None, lab_id=None, booking_type=None, from_date=None, limit=200) -> list:
+    """Admin view of all bookings, with optional filters."""
+    q = {}
+    if status:
+        if status not in _VALID_STATUSES:
+            raise ValidationFailed(f"status must be one of {sorted(_VALID_STATUSES)}")
+        q["status"] = status
+    if booking_type:
+        if booking_type not in _VALID_TYPES:
+            raise ValidationFailed(f"type must be one of {sorted(_VALID_TYPES)}")
+        q["type"] = booking_type
+    if lab_id:
+        q["lab_id"] = lab_id
+    if from_date:
+        try:
+            parse_date(from_date)
+        except ValueError:
+            raise ValidationFailed("from_date must be in YYYY-MM-DD format")
+        q["end_date"] = {"$gte": from_date}  # bookings that haven't ended yet
+    return list(bookings.find(q).sort("start_date", 1).limit(min(limit, 500)))
+
+
+def list_blocks(from_date=None) -> list:
+    """Active semester reservations / blocks."""
+    return list_bookings(status="approved", booking_type="admin_block", from_date=from_date)

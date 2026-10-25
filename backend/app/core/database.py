@@ -7,6 +7,7 @@ db = client[DB_NAME]
 labs = db["labs"]
 bookings = db["bookings"]
 slots = db["slots"]
+users = db["users"]
 
 
 def init_indexes():
@@ -20,3 +21,10 @@ def init_indexes():
     bookings.create_index([("status", ASCENDING), ("created_at", ASCENDING)])
     bookings.create_index([("student.roll_no", ASCENDING), ("status", ASCENDING)])
     bookings.create_index([("lab_id", ASCENDING), ("start_date", ASCENDING)])
+
+    # accounts: unique email, unique roll number (admins have no roll_no)
+    users.create_index("email", unique=True)
+    users.create_index(
+        "roll_no", unique=True,
+        partialFilterExpression={"roll_no": {"$type": "string"}},
+    )
