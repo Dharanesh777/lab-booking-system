@@ -8,7 +8,7 @@ from pymongo.errors import PyMongoError
 from app.core.database import init_indexes
 from app.core.exceptions import (AuthError, BookingError, ConflictError,
                                  ForbiddenError, NotFoundError)
-from app.routes import admin, admin_labs, admin_users, auth, labs, student
+from app.routes import admin, admin_labs, admin_users, auth, dashboard, labs, student
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -57,3 +57,4 @@ app.include_router(student.router)
 app.include_router(admin.router)
 app.include_router(admin_labs.router)
 app.include_router(admin_users.router)
+app.include_router(dashboard.router)

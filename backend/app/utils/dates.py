@@ -20,3 +20,6 @@ def date_range(start: date, end: date, skip_weekdays=()):
         if d.weekday() not in skip_weekdays:
             yield d.isoformat()
         d += timedelta(days=1)
+
+def now_ist() -> datetime:
+    return datetime.now(IST)
