@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { api } from '../api.js';
 import { useAuth } from '../auth.jsx';
 import { addDays, toISO, useToast, ErrorNote, errText, Loading, Empty } from '../ui.jsx';
@@ -8,8 +8,10 @@ export default function Book() {
   const { user } = useAuth();
   const toast = useToast();
   const nav = useNavigate();
+  const [sp] = useSearchParams();
+  const pre = useRef(sp.get('hour'));
   const today = new Date();
-  const [date, setDate] = useState(toISO(today));
+  const [date, setDate] = useState(sp.get('date') || toISO(today));
   const [labs, setLabs] = useState(null);
   const [labId, setLabId] = useState('');
   const [slots, setSlots] = useState(null);
@@ -20,14 +22,19 @@ export default function Book() {
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
 
   useEffect(() => {
-    api('/labs').then((l) => { setLabs(l); if (l[0]) setLabId(l[0]._id); }).catch((e) => { setLabs([]); setErr(errText(e)); });
+    api('/labs').then((l) => { setLabs(l); if (l[0]) setLabId(l.some((x) => x._id === sp.get('lab')) ? sp.get('lab') : l[0]._id); }).catch((e) => { setLabs([]); setErr(errText(e)); });
   }, []);
 
   const loadSlots = () => {
     if (!labId || !date) return;
     setSlots(null); setPicked([]);
     api(`/labs/${labId}/availability`, { params: { date } })
-      .then(setSlots).catch((e) => { setSlots([]); setErr(errText(e)); });
+      .then((s) => {
+        setSlots(s);
+        const h = Number(pre.current);
+        if (h && s.some((x) => x.hour === h && x.available)) setPicked([h]);
+        pre.current = null;
+      }).catch((e) => { setSlots([]); setErr(errText(e)); });
   };
   useEffect(loadSlots, [labId, date]); // eslint-disable-line
 

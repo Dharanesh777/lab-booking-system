@@ -148,3 +148,29 @@ input[type=checkbox] { width: 26px; height: 26px; min-height: 0; accent-color: v
   50% { background-position: 100% 50%; }
 }
 @media (prefers-reduced-motion: reduce) { .nav { animation: none; } }
+/* dashboard timetable: one row per lab, one column per hour */
+.dash-bar { margin-bottom: 1rem; }
+.dash-date { font-size: 1.15rem; min-width: 240px; text-align: center; }
+.legend { display: flex; gap: 1.1rem; flex-wrap: wrap; font-size: .95rem; margin: .25rem 0 1rem; }
+.sw { display: inline-block; width: 16px; height: 16px; border-radius: 4px; margin-right: .45rem; vertical-align: -3px; }
+.tt { display: grid; grid-template-columns: 150px repeat(var(--cols, 8), minmax(0, 1fr)); gap: .4rem; align-items: stretch; }
+.tt .corner { display: flex; align-items: center; padding: 0 .6rem; font-size: .85rem; color: var(--muted); font-weight: 600; }
+.tt .per { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: .4rem 0; background: var(--tint); border-radius: 10px; line-height: 1.2; }
+.tt .per small { color: var(--muted); font-size: .8rem; }
+.tt .labname { display: flex; align-items: center; padding: .4rem .7rem; background: var(--tint); border-radius: 10px; font-weight: 700; font-size: .95rem; overflow-wrap: anywhere; }
+.cell { position: relative; display: flex; align-items: center; justify-content: center; min-height: 60px; border: 0; border-radius: 10px; font: inherit; font-size: .85rem; font-weight: 600; padding: .25rem; text-align: center; }
+button.cell { cursor: pointer; }
+button.cell:hover { filter: brightness(.95); }
+.cell.free { background: #CDEBD8; color: #14513A; }
+.cell.pending { background: #FFD6A0; color: #6B3500; }
+.cell.booked { background: #F4B6B6; color: #7A1717; }
+.cell.past { background: var(--soft); color: var(--muted); }
+.hov { display: none; position: absolute; left: 50%; top: calc(100% + 6px); transform: translateX(-50%); z-index: 5; width: 260px; background: var(--ink); color: #fff; border-radius: 12px; padding: .8rem 1rem; text-align: left; font-size: .9rem; font-weight: 400; line-height: 1.45; pointer-events: none; }
+.cell.last .hov { left: auto; right: 0; transform: none; }
+.cell:hover .hov, .cell:focus-visible .hov { display: block; }
+@media (max-width: 700px) {
+  .tt-wrap { overflow-x: auto; padding-bottom: .5rem; }
+  .tt { min-width: 720px; grid-template-columns: 110px repeat(var(--cols, 8), minmax(0, 1fr)); }
+}
+
+.cell:hover, .cell:focus-visible { z-index: 10; }

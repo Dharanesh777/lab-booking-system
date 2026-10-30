@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { api } from '../api.js';
 import { Confirm, Empty, ErrorNote, Loading, errText, fmtDay, fmtHours, toISO, useToast } from '../ui.jsx';
 
 export default function BlockLab() {
   const toast = useToast();
+  const [sp] = useSearchParams();
   const today = toISO(new Date());
   const [labs, setLabs] = useState(null);
   const [blocks, setBlocks] = useState(null);
-  const [f, setF] = useState({ lab_id: '', start_date: today, end_date: today, reason: '' });
-  const [hours, setHours] = useState([]);
+  const [f, setF] = useState({ lab_id: '', start_date: sp.get('date') || today, end_date: sp.get('date') || today, reason: '' });
+  const [hours, setHours] = useState(sp.get('hour') ? [Number(sp.get('hour'))] : []);
   const [override, setOverride] = useState(false);
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
@@ -16,7 +18,7 @@ export default function BlockLab() {
 
   const loadBlocks = () => api('/admin/blocks', { params: { from_date: today } }).then(setBlocks).catch((e) => { setErr(errText(e)); setBlocks([]); });
   useEffect(() => {
-    api('/admin/labs').then((l) => { const a = l.filter((x) => x.active); setLabs(a); if (a[0]) setF((s) => ({ ...s, lab_id: a[0]._id })); }).catch((e) => { setErr(errText(e)); setLabs([]); });
+    api('/admin/labs').then((l) => { const a = l.filter((x) => x.active); setLabs(a); if (a[0]) setF((s) => ({ ...s, lab_id: a.some((x) => x._id === sp.get('lab')) ? sp.get('lab') : a[0]._id })); }).catch((e) => { setErr(errText(e)); setLabs([]); });
     loadBlocks();
   }, []); // eslint-disable-line
 

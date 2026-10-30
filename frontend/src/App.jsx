@@ -1,6 +1,7 @@
 import { Navigate, NavLink, Route, Routes, Outlet } from 'react-router-dom';
 import { useAuth } from './auth.jsx';
 import Login from './pages/Login.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 import Book from './pages/Book.jsx';
 import MyBookings from './pages/MyBookings.jsx';
 import Approvals from './pages/Approvals.jsx';
@@ -8,17 +9,19 @@ import BlockLab from './pages/BlockLab.jsx';
 import AdminLabs from './pages/AdminLabs.jsx';
 import Admins from './pages/Admins.jsx';
 
+// role omitted = any logged-in user
 function Shell({ role }) {
   const { user, logout } = useAuth();
   if (!user) return <Navigate to="/login" replace />;
-  if (user.role !== role) return <Navigate to={user.role === 'admin' ? '/admin/approvals' : '/book'} replace />;
-  const links = role === 'admin'
-    ? [['/admin/approvals', 'Approvals'], ['/admin/block', 'Block lab'], ['/admin/labs', 'Labs'], ['/admin/admins', 'Admins']]
-    : [['/book', 'Book a lab'], ['/my-bookings', 'My bookings']];
+  if (role && user.role !== role) return <Navigate to="/dashboard" replace />;
+  const admin = user.role === 'admin';
+  const links = admin
+    ? [['/dashboard', 'Dashboard'], ['/admin/approvals', 'Approvals'], ['/admin/block', 'Block lab'], ['/admin/labs', 'Labs'], ['/admin/admins', 'Admins']]
+    : [['/dashboard', 'Dashboard'], ['/book', 'Book a lab'], ['/my-bookings', 'My bookings']];
   return (
     <>
       <header className="nav">
-        <strong>PSG Tech · Lab Slots{role === 'admin' ? ' · Admin' : ''}</strong>
+        <strong>PSG Tech · Lab Slots{admin ? ' · Admin' : ''}</strong>
         <nav>
           {links.map(([to, label]) => <NavLink key={to} to={to}>{label}</NavLink>)}
           <button className="linkbtn" onClick={logout}>Log out</button>
@@ -31,10 +34,13 @@ function Shell({ role }) {
 
 export default function App() {
   const { user } = useAuth();
-  const home = user ? (user.role === 'admin' ? '/admin/approvals' : '/book') : '/login';
+  const home = user ? '/dashboard' : '/login';
   return (
     <Routes>
       <Route path="/login" element={user ? <Navigate to={home} replace /> : <Login />} />
+      <Route element={<Shell />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Route>
       <Route element={<Shell role="student" />}>
         <Route path="/book" element={<Book />} />
         <Route path="/my-bookings" element={<MyBookings />} />

@@ -30,6 +30,7 @@ def _booking_info(b: dict) -> dict:
         "reason": b["reason"], "faculty": b.get("faculty"),
         "start_date": b["start_date"], "end_date": b["end_date"],
         "decided_by": b.get("decided_by"),
+        "hours": b["hours"],
     }
 
 
@@ -37,7 +38,7 @@ def _request_info(b: dict) -> dict:
     """Admin only: a waiting request behind an orange slot."""
     s = b["student"]
     return {"id": b["_id"], "name": s["name"], "roll_no": s["roll_no"],
-            "reason": b["reason"], "faculty": b["faculty"]}
+            "reason": b["reason"], "faculty": b["faculty"], "hours": b["hours"]}
 
 
 def get_dashboard(date_str: str, is_admin: bool) -> dict:
