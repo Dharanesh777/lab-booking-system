@@ -168,9 +168,30 @@ button.cell:hover { filter: brightness(.95); }
 .hov { display: none; position: absolute; left: 50%; top: calc(100% + 6px); transform: translateX(-50%); z-index: 5; width: 260px; background: var(--ink); color: #fff; border-radius: 12px; padding: .8rem 1rem; text-align: left; font-size: .9rem; font-weight: 400; line-height: 1.45; pointer-events: none; }
 .cell.last .hov { left: auto; right: 0; transform: none; }
 .cell:hover .hov, .cell:focus-visible .hov { display: block; }
+.labrow { display: contents; }
+.cell .hh { display: none; }
+.dash-pick { max-width: 200px; }
+.cell:hover, .cell:focus-visible { z-index: 10; }
+
+/* tablets: a slimmer lab-name column so all eight hours fit */
+@media (max-width: 900px) {
+  .tt { grid-template-columns: 110px repeat(var(--cols, 8), minmax(0, 1fr)); gap: .3rem; }
+  .cell { font-size: .75rem; padding: .15rem; }
+}
+
+/* phones: every lab becomes a card, its hours in a 4-column grid */
 @media (max-width: 700px) {
-  .tt-wrap { overflow-x: auto; padding-bottom: .5rem; }
-  .tt { min-width: 720px; grid-template-columns: 110px repeat(var(--cols, 8), minmax(0, 1fr)); }
+  .dash-bar { gap: .6rem; }
+  .dash-date { min-width: 0; flex: 1; font-size: 1.05rem; }
+  .dash-pick { flex: 1 1 100%; max-width: none; }
+  .legend { gap: .5rem 1rem; }
+  .tt { display: flex; flex-direction: column; gap: .9rem; }
+  .tt .corner, .tt .per { display: none; }
+  .labrow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .45rem; background: var(--tint); padding: .75rem; border-radius: 14px; }
+  .tt .labname { grid-column: 1 / -1; background: none; padding: 0 .1rem .25rem; font-size: 1.1rem; }
+  .cell { flex-direction: column; gap: .15rem; min-height: 72px; font-size: .85rem; }
+  .cell .hh { display: block; font-size: .75rem; font-weight: 400; }
+  .hov { display: none !important; }
 }
 
 .cell:hover, .cell:focus-visible { z-index: 10; }

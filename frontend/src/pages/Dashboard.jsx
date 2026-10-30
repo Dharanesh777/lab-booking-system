@@ -10,7 +10,7 @@ import {
 const LABEL = { free: 'Free', pending: 'Waiting', booked: 'Booked' };
 const parseISO = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
 
-function Cell({ lab, cell, last, isAdmin, onOpen }) {
+function Cell({ lab, cell, period, last, isAdmin, onOpen }) {
   const past = cell.past;
   const cls = `cell ${past ? 'past' : cell.status}${last ? ' last' : ''}`;
   const text = past ? 'Past' : LABEL[cell.status];
@@ -23,11 +23,12 @@ function Cell({ lab, cell, last, isAdmin, onOpen }) {
       Click for details
     </span>
   );
-  if (!clickable) return <span className={cls}>{text}</span>;
+  const hh = <small className="hh">{period.hour} · {period.time.split(' - ')[0]}</small>;
+  if (!clickable) return <span className={cls}>{hh}{text}</span>;
   return (
     <button type="button" className={cls} onClick={() => onOpen(lab, cell)}
       aria-label={`${lab.name}, hour ${cell.hour}, ${text}`}>
-      {text}{hover}
+      {hh}{text}{hover}
     </button>
   );
 }
@@ -143,15 +144,15 @@ function PendingModal({ lab, cell, date, onClose, onChanged }) {
 /* one timetable row: lab name, then one cell per hour */
 function LabRow({ lab, periods, isAdmin, onOpen }) {
   return (
-    <>
+    <div className="labrow">
       <div className="labname">{lab.name}</div>
       {periods.map((p, i) => {
         const cell = lab.cells.find((c) => c.hour === p.hour);
         return cell ? (
-          <Cell key={p.hour} lab={lab} cell={cell} last={i >= periods.length - 2} isAdmin={isAdmin} onOpen={onOpen} />
+          <Cell key={p.hour} lab={lab} cell={cell} period={p} last={i >= periods.length - 2} isAdmin={isAdmin} onOpen={onOpen} />
         ) : <span key={p.hour} className="cell past">–</span>;
       })}
-    </>
+    </div>
   );
 }
 
@@ -200,7 +201,7 @@ export default function Dashboard() {
           <button className="btn ghost small" onClick={() => go(-1)} disabled={!canPrev} aria-label="Previous day">‹</button>
           <b className="dash-date">{fmtLong(date)}</b>
           <button className="btn ghost small" onClick={() => go(1)} disabled={!canNext} aria-label="Next day">›</button>
-          <input type="date" aria-label="Pick a date" style={{ maxWidth: 200 }} value={date}
+          <input type="date" aria-label="Pick a date" className="dash-pick" value={date}
             min={isAdmin ? undefined : min} max={isAdmin ? undefined : max}
             onChange={(e) => e.target.value && setDate(e.target.value)} />
         </div>
